@@ -22,4 +22,4 @@ pyo3-build-config = "0.29.0"
 
 # TODO: 等上游 PR 合并后删除此 patch，恢复使用 crates.io 版本
 [patch.crates-io]
-calamine = { git = "https://github.com/tafia/calamine.git"}
+calamine = { git = "https://github.com/dayongxie/calamine.git"}
