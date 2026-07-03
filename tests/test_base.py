@@ -382,3 +382,21 @@ def test_datetime_overflow():
 
     # 2994626.0 = 10099-01-01
     assert reader.get_sheet_by_index(0).to_python() == [["date"], [2994626.0]]
+
+
+def test_whitespace_strings():
+    """Test that leading/trailing whitespace is stripped from string cells
+    unless xml:space="preserve" is set.
+
+    The test xlsx has 4 shared strings:
+      0: "  hello  " without xml:space=preserve -> stripped to "hello"
+      1: "  world  " with xml:space=preserve -> kept as "  world  "
+      2: "normal" -> unchanged
+      3: "\\n\\ttabbed\\t\\n" without preserve -> stripped to "tabbed"
+    """
+    reader = CalamineWorkbook.from_path(PATH / "whitespace_strings.xlsx")
+    row = reader.get_sheet_by_name("Sheet1").to_python()[0]
+    assert row[0] == "hello"
+    assert row[1] == "  world  "
+    assert row[2] == "normal"
+    assert row[3] == "tabbed"
