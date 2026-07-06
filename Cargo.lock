@@ -47,7 +47,7 @@ checksum = "1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b"
 [[package]]
 name = "calamine"
 version = "0.35.0"
-source = "git+https://github.com/dayongxie/calamine.git?rev=8c14fe8193da81d4b6cac9a9828ce168feeaabda#8c14fe8193da81d4b6cac9a9828ce168feeaabda"
+source = "git+https://github.com/dayongxie/calamine.git?rev=5fb24f8d1d13258b536a314a60685f7a2211d4a9#5fb24f8d1d13258b536a314a60685f7a2211d4a9"
 dependencies = [
  "atoi_simd",
  "byteorder",
